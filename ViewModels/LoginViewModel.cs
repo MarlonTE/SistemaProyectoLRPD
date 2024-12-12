@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Security;
 using System.Windows.Input;
 
 namespace SistemaProyectoLRPD.ViewModels
@@ -32,7 +27,7 @@ namespace SistemaProyectoLRPD.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
-            RecoverPasswordCommand = new ViewModelCommand(p=> ExecuteRecoverPasswordCommand("", ""));
+            RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPasswordCommand("", ""));
         }
 
 

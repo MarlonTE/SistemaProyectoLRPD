@@ -1,0 +1,55 @@
+﻿<Window x:Class="SistemaProyectoLRPD.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SistemaProyectoLRPD.Views"
+        mc:Ignorable="d"
+        Title="MainView" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#F2373737"
+        BorderThickness="1,1,1,1"
+        BorderBrush="#26FFFFFF"
+        Foreground="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="bttn_close"
+                Background="#FFAF0000"
+                Grid.Column="3"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Cursor="Hand"
+                Click="bttn_close_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,0,0,0" Padding="0,0,0,0" Grid.IsSharedSizeScope="True"/>
+            <Button x:Name="bttn_Maximice"
+                Background="#FF004080"
+                Grid.Column="2"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Cursor="Hand"
+                Click="bttn_MaximizeResize_Click" BorderThickness="0,0,0,0" Padding="0,0,0,0"/>
+            <Button x:Name="bttn_MaximizeResize"
+                Background="#FF0080FF"
+                Grid.Column="1"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Cursor="Hand"
+                Click="bttn_Minimize_Click" BorderThickness="0,0,0,0" Padding="0,0,0,0"/>
+        </Grid>
+
+    </Grid>
+</Window>
