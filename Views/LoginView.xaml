@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaProyectoLRPD"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Log" Height="210" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#F2000000"
+        BorderThickness="1,1,1,1"
+        BorderBrush="#26FFFFFF"
+        Foreground="White">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="bttn_close"
+                Background="#FFAF0000"
+                Grid.Column="2"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Cursor="Hand"
+                Click="bttn_close_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0,0,0,0" Padding="0,0,0,0" Grid.IsSharedSizeScope="True"/>
+            <Button x:Name="bttn_Minimize"
+                Background="#FF0080FF"
+                Grid.Column="1"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Cursor="Hand"
+                Click="bttn_Minimize_Click" BorderThickness="0,0,0,0" Padding="0,0,0,0"/>
+        </Grid>
+        <StackPanel Grid.Row="1" Margin="20,8,249,15" Orientation="Horizontal">
+            <Image Height="150" Width="200" HorizontalAlignment="Left" StretchDirection="DownOnly" Cursor="Arrow" VerticalAlignment="Top" Margin="10,10,0,0" Source="/Images/WPO.png"/>
+        </StackPanel>
+        <StackPanel Height="170" Margin="249,8,20,15" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" Text="Sistema" FontSize="28" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,5" Margin="0,0,0,10"/>
+            <TextBlock Text="Usuario:" RenderTransformOrigin="-1.809,1.944" Foreground="#7FFFFFFF" Height="20"/>
+            <TextBox x:Name="tbox_User" TextWrapping="Wrap" Width="200" Background="{x:Null}" Foreground="White" SelectionBrush="#99FFFFFF" BorderBrush="#3FFFFFFF" BorderThickness="0,0,0,1" Margin="0,0,0,10" Height="18" SelectionTextBrush="Gray"/>
+            <TextBlock TextWrapping="Wrap" Text="Contraseña:" Foreground="#7FFFFFFF" Height="20"/>
+            <PasswordBox x:Name="pbox_Pass" Width="200" BorderBrush="#3FFFFFFF" Foreground="White" Background="{x:Null}" BorderThickness="0,0,0,1" Height="18" Margin="0,0,0,8" SelectionBrush="#99FFFFFF" SelectionTextBrush="Gray"/>
+            <Button x:Name="bttn_login" HorizontalAlignment="Center" VerticalAlignment="Top" Height="16" BorderThickness="0,0,0,0" FontSize="8" Width="60" Background="White" BorderBrush="{x:Null}" Content="Iniciar sesion" Padding="0,0,0,0" Foreground="#FF232323"/>
+        </StackPanel>
     </Grid>
 </Window>
