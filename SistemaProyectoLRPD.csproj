@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Views\WPO-Recurso 1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\WPO-Recurso 1.png" />
   </ItemGroup>
 
 </Project>

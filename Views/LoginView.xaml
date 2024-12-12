@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemaProyectoLRPD"
+        xmlns:viewModels="clr-namespace:SistemaProyectoLRPD.ViewModels"
         mc:Ignorable="d"
         Title="Log" Height="210" Width="500"
         ResizeMode="NoResize"
@@ -15,7 +16,20 @@
         BorderThickness="1,1,1,1"
         BorderBrush="#26FFFFFF"
         Foreground="White">
-    <Grid>
+
+    <Window.DataContext>
+        <viewModels:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+
+    <Grid Cursor="">
         <Grid.RowDefinitions>
             <RowDefinition Height="15"/>
             <RowDefinition/>
@@ -42,13 +56,15 @@
                 Cursor="Hand"
                 Click="bttn_Minimize_Click" BorderThickness="0,0,0,0" Padding="0,0,0,0"/>
         </Grid>
+        
         <StackPanel Grid.Row="1" Margin="20,8,249,15" Orientation="Horizontal">
-            <Image Height="150" Width="200" HorizontalAlignment="Left" StretchDirection="DownOnly" Cursor="Arrow" VerticalAlignment="Top" Margin="10,10,0,0" Source="/Images/WPO.png"/>
+            <Image Height="150" Width="200" HorizontalAlignment="Left" StretchDirection="DownOnly" Cursor="Arrow" VerticalAlignment="Top" Margin="10,10,0,0" Source="/Images/WPO-Recurso 1.png" Panel.ZIndex="100"/>
         </StackPanel>
+        
         <StackPanel Height="170" Margin="249,8,20,15" Grid.Row="1">
             <TextBlock TextWrapping="Wrap" Text="Sistema" FontSize="28" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,0,0,5" Margin="0,0,0,10"/>
             <TextBlock Text="Usuario:" RenderTransformOrigin="-1.809,1.944" Foreground="#7FFFFFFF" Height="20"/>
-            <TextBox x:Name="tbox_User" TextWrapping="Wrap" Width="200" Background="{x:Null}" Foreground="White" SelectionBrush="#99FFFFFF" BorderBrush="#3FFFFFFF" BorderThickness="0,0,0,1" Margin="0,0,0,10" Height="18" SelectionTextBrush="Gray"/>
+            <TextBox x:Name="tbox_User" Text="{Binding Username}" TextWrapping="Wrap" Width="200" Background="{x:Null}" Foreground="White" SelectionBrush="#99FFFFFF" BorderBrush="#3FFFFFFF" BorderThickness="0,0,0,1" Margin="0,0,0,10" Height="18" SelectionTextBrush="Gray"/>
             <TextBlock TextWrapping="Wrap" Text="Contraseña:" Foreground="#7FFFFFFF" Height="20"/>
             <PasswordBox x:Name="pbox_Pass" Width="200" BorderBrush="#3FFFFFFF" Foreground="White" Background="{x:Null}" BorderThickness="0,0,0,1" Height="18" Margin="0,0,0,8" SelectionBrush="#99FFFFFF" SelectionTextBrush="Gray"/>
             <Button x:Name="bttn_login" HorizontalAlignment="Center" VerticalAlignment="Top" Height="16" BorderThickness="0,0,0,0" FontSize="8" Width="60" Background="White" BorderBrush="{x:Null}" Content="Iniciar sesion" Padding="0,0,0,0" Foreground="#FF232323"/>
